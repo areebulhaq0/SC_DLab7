@@ -12,7 +12,6 @@ public class DeckOfCards {
         initializeDeck();
     }
 
-    // Initialize the deck with 52 cards (standard deck)
     private void initializeDeck() {
         String[] suits = {"Hearts", "Diamonds"};
         String[] values = {"Jack", "Queen", "King", "Ace"};
@@ -25,17 +24,15 @@ public class DeckOfCards {
         shuffleDeck();
     }
 
-    // Shuffle the deck
     private void shuffleDeck() {
         Collections.shuffle(deck);
     }
 
-    // Synchronized method to deal a card to a player
     public synchronized String dealCard() {
         if (deck.isEmpty()) {
             return "No more cards to deal!";
         }
-        return deck.remove(deck.size() - 1); // Deal the top card
+        return deck.remove(deck.size() - 1);
     }
 
     // Check if the deck is empty
